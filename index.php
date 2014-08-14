@@ -10,6 +10,11 @@ Author URI: http://rtcamp.com/
 
 define( 'RT_BIZ_PORTFOLIO', 'portfolio' );
 
+if ( ! defined( 'RT_PORTFOLIO_URL' ) ) {
+	define( 'RT_PORTFOLIO_URL', plugin_dir_url( __FILE__ ) );
+}
+
+
 add_action( 'rt_biz_init', 'rt_biz_portfolio_init', 1 );
 
 function rt_biz_portfolio_init(){

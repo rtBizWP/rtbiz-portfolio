@@ -7,6 +7,9 @@
  * Time: 6:57 PM
  */
 class RT_Biz_Portfolio {
+    
+     var $menu_position = 33;
+     
 	function __construct() {
 		add_action( 'plugins_loaded', 'plugins_loaded' );
 		add_action( 'init', array( &$this, 'init_0' ), 0 );
@@ -81,6 +84,8 @@ class RT_Biz_Portfolio {
 				'public'      => true,
 				'show_ui'     => true,
 				'capability_type' => 'portfolio',
+                                'menu_icon'   => RT_PORTFOLIO_URL.'app/assets/img/portfolio-16X16.png',
+                                'menu_position' => $this->menu_position,
 				'taxonomies'  => array( 'post_tag' ),
 				'supports'    => array(
 					'title',
