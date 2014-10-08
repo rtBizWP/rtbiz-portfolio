@@ -7,8 +7,8 @@
  * Time: 6:57 PM
  */
 class RT_Biz_Portfolio {
-    
-     var $menu_position = 33;
+
+	var $menu_position = 38;
      
 	function __construct() {
 		add_action( 'plugins_loaded', 'plugins_loaded' );
@@ -20,10 +20,9 @@ class RT_Biz_Portfolio {
 	}
 
 	function register_rt_portfolio_testimonial_module( $modules ) {
-		global $rt_wiki_roles;
 		$module_key = ( function_exists( 'rt_biz_sanitize_module_key' ) ) ? rt_biz_sanitize_module_key( RT_BIZ_PORTFOLIO ) : '';
 		$modules[ $module_key ] = array(
-			'label' => __( 'Portfolio & Testimonial' ),
+			'label' => __( 'rtBiz Portfolio' ),
 			'post_types' => array(
 				'portfolio'
 			),
@@ -84,8 +83,8 @@ class RT_Biz_Portfolio {
 				'public'      => true,
 				'show_ui'     => true,
 				'capability_type' => 'portfolio',
-                                'menu_icon'   => RT_PORTFOLIO_URL.'app/assets/img/portfolio-16X16.png',
-                                'menu_position' => $this->menu_position,
+				'menu_icon'   => RT_PORTFOLIO_URL.'app/assets/img/portfolio-16X16.png',
+				'menu_position' => $this->menu_position,
 				'taxonomies'  => array( 'post_tag' ),
 				'supports'    => array(
 					'title',
