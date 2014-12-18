@@ -55,8 +55,8 @@ class RT_Biz_Portfolio {
 			);
 			p2p_register_connection_type(
 				array(
-					'name'        => 'portfolio_' . rt_biz_get_organization_post_type(),
-					'to'          => rt_biz_get_organization_post_type(),
+					'name'        => 'portfolio_' . rt_biz_get_company_post_type(),
+					'to'          => rt_biz_get_company_post_type(),
 					'from'        => 'portfolio',
 					'cardinality' => 'one-to-one',
 					'title'       => array(
