@@ -13,14 +13,14 @@ class RT_Biz_Portfolio {
 	function __construct() {
 		add_action( 'plugins_loaded', 'plugins_loaded' );
 		add_action( 'init', array( &$this, 'init_0' ), 0 );
-		add_filter( 'rt_biz_modules', array( $this, 'register_rt_portfolio_testimonial_module' ) );
+		add_filter( 'rtbiz_modules', array( $this, 'register_rt_portfolio_testimonial_module' ) );
 		add_action( 'activated_plugin', 'flush_rewrite_rules' );
 		add_action( 'deactivate_plugin', 'flush_rewrite_rules' );
 		add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 	}
 
 	function register_rt_portfolio_testimonial_module( $modules ) {
-		$module_key = ( function_exists( 'rt_biz_sanitize_module_key' ) ) ? rt_biz_sanitize_module_key( RT_BIZ_PORTFOLIO ) : '';
+		$module_key = ( function_exists( 'rtbiz_sanitize_module_key' ) ) ? rtbiz_sanitize_module_key( RT_BIZ_PORTFOLIO ) : '';
 		$modules[ $module_key ] = array(
 			'label' => __( 'rtBiz Portfolio' ),
 			'post_types' => array(
@@ -55,8 +55,8 @@ class RT_Biz_Portfolio {
 			);
 			p2p_register_connection_type(
 				array(
-					'name'        => 'portfolio_' . rt_biz_get_company_post_type(),
-					'to'          => rt_biz_get_company_post_type(),
+					'name'        => 'portfolio_' . rtbiz_get_company_post_type(),
+					'to'          => rtbiz_get_company_post_type(),
 					'from'        => 'portfolio',
 					'cardinality' => 'one-to-one',
 					'title'       => array(

@@ -15,7 +15,7 @@ if ( ! defined( 'RT_PORTFOLIO_URL' ) ) {
 }
 
 
-add_action( 'rt_biz_init', 'rt_biz_portfolio_init', 1 );
+add_action( 'rtbiz_init', 'rt_biz_portfolio_init', 1 );
 
 function rt_biz_portfolio_init(){
 	$rt_biz_portfolio_loader = new RT_WP_Autoload( trailingslashit( dirname( __FILE__ ) ) . 'app' );
